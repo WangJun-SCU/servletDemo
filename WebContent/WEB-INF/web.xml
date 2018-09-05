@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+	<display-name>My web app</display-name>
+	<filter>
+		<filter-name>MyFilter</filter-name>
+		<filter-class>com.servletDemo.servlet.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MyFilter</filter-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>servletdemo</servlet-name>
+		<servlet-class>
+			com.servletDemo.servlet.MyServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletdemo</servlet-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>
+			com.servletDemo.servlet.MyListener
+		</listener-class>
+	</listener>
+</web-app>
